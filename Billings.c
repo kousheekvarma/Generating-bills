@@ -2,20 +2,23 @@
 #include<string.h>
 #include<stdlib.h>
 
-struct items{
+struct items
+{
     char item[20];
     float price;
     int qty;
 };
 
-struct orders{
+struct orders
+{
     char customer[50];
     char date[50];
     int numOfItems;
     struct items itm[50];
 };
 
-void generateBillHeader(char name[50],char date[30]){
+void generateBillHeader(char name[50],char date[30])
+{
     printf("\n\n");
         printf("\t    WOW . Restaurant");
         printf("\n\t   -----------------");
@@ -29,7 +32,8 @@ void generateBillHeader(char name[50],char date[30]){
         printf("\n---------------------------------------");
         printf("\n\n");
 }
-void generateBillBody(char item[30],int qty, float price){
+void generateBillBody(char item[30],int qty, float price)
+{
     printf("%s\t\t",item); 
         printf("%d\t\t",qty); 
         printf("%.2f\t\t",qty * price); 
@@ -54,7 +58,8 @@ void generateBillFooter(float total){
     printf("\nGrand Total\t\t\t%.2f",grandTotal);
     printf("\n---------------------------------------\n");
 }
-int main(){
+int main()
+{
     
     int opt,i,n;
     struct orders ord;
@@ -64,10 +69,10 @@ int main(){
     FILE *fp;
     
     while(contFlag == 'y')
-	{
+    {
     float total = 0;
     int invoiceFound = 0;
-    printf("\t============ADV. RESTAURANT============");
+    printf("\t============WOW. RESTAURANT============");
     printf("\n\nPlease select your prefered operation");
     printf("\n\n1.Generate Invoice");
     printf("\n2.Show all Invoices");
